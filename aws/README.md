@@ -5,6 +5,13 @@
 ### Get default VPC id
 - `aws ec2 describe-vpcs --query "Vpcs[?IsDefault].[VpcId]"`
 
+### Create security group
+- `aws ec2 create-security-group`
+- `aws ec2 describe-security-groups`
+
+### Authorize SSH ingress in security group
+- `aws ec2 authorize-security-group-ingress`
+
 ### Get VPC subnet
 - `aws ec2 describe-subnets --filters "Name=vpc-id,Values=<vpc-id>"`
 
