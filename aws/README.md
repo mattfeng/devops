@@ -2,6 +2,12 @@
 
 ## EC2 instances
 
+### Get default VPC id
+- `aws ec2 describe-vpcs --query "Vpcs[?IsDefault].[VpcId]"`
+
+### Get VPC subnet
+- `aws ec2 describe-subnets --filters "Name=vpc-id,Values=<vpc-id>"`
+
 ### Create key pair
 - `aws ec2 create-key-pair --key-name <keyname> --query 'KeyMaterial' --output text > <keyname>.pem`
 
@@ -27,6 +33,9 @@ aws ec2 describe-images \
   - `Name=instance-type,Values=<instance type>`
 
 ### Launch instance
+- `aws ec2 run-instances --image-id <ami-id> --count 1 --instance-type t2.medium --key-name <key name> --security-group-ids <sg id> --subnet-id <subnet id>`
+
+### Stop instance
 
 ### Terminate instance
 
